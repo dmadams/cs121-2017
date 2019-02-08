@@ -1,0 +1,72 @@
+INSERT INTO audio_files VALUES (NULL, 101, 'A', 300, 's');
+INSERT INTO audio_files VALUES (NULL, 1010, 'B', 300, 's');
+INSERT INTO audio_files VALUES (NULL, 10101, 'C', 300, 's');
+INSERT INTO audio_files VALUES (NULL, 10110, 'D', 300, 's');
+INSERT INTO audio_files VALUES (NULL, 10111, 'E', 300, 's');
+INSERT INTO audio_files VALUES (NULL, 10100, 'F', 300, 's');
+INSERT INTO audio_files VALUES (NULL, 101111, 'G', 300, 's');
+INSERT INTO audio_files VALUES (NULL, 101001, 'H', 300, 's');
+INSERT INTO audio_files VALUES (NULL, 1011101, 'I', 300, 's');
+INSERT INTO audio_files VALUES (NULL, 10111010, 'ad1', 30, 'a');
+INSERT INTO audio_files VALUES (NULL, 10111011, 'ad2', 30, 'a');
+INSERT INTO audio_files VALUES (NULL, 10111111, 'ad3', 30, 'a');
+INSERT INTO audio_files VALUES (NULL, 11111111, 'ad4', 30, 'a');
+INSERT INTO audio_files VALUES (NULL, 111111110, 'ad5', 30, 'a');
+
+INSERT INTO songs VALUES (1, 5, 1);
+INSERT INTO songs VALUES (2, 5, 0);
+INSERT INTO songs VALUES (3, 5, 0);
+INSERT INTO songs VALUES (4, 5, 0);
+INSERT INTO songs VALUES (5, 5, 1);
+INSERT INTO songs VALUES (6, 5, 1);
+INSERT INTO songs VALUES (7, 5, 0);
+INSERT INTO songs VALUES (8, 5, 1);
+INSERT INTO songs VALUES (9, 5, 1);
+
+INSERT INTO artists VALUES (1, 1, 'Jeezy');
+INSERT INTO artists VALUES (2, 1, 'Jeezy');
+INSERT INTO artists VALUES (3, 2, 'Desiigner');
+INSERT INTO artists VALUES (4, 2, 'Desiigner');
+INSERT INTO artists VALUES (4, 1, 'Jeezy');
+INSERT INTO artists VALUES (5, 3, 'Eminem');
+INSERT INTO artists VALUES (6, 4, 'Lil Wayne');
+INSERT INTO artists VALUES (7, 5, 'Drake');
+INSERT INTO artists VALUES (8, 5, 'Drake');
+INSERT INTO artists VALUES (9, 6, 'Childish Gambino');
+INSERT INTO artists VALUES (9, 4, 'Lil Wayne');
+
+INSERT INTO playlist VALUES ('2017-10-05 13:31:02', '2017-10-05 13:34:02', 1, 1);
+INSERT INTO playlist VALUES ('2017-10-05 13:34:02', '2017-10-05 13:36:02', 2, 0);
+INSERT INTO playlist VALUES ('2017-10-05 13:37:02', '2017-10-05 13:39:02', 3, 0);
+INSERT INTO playlist VALUES ('2017-10-05 13:38:02', '2017-10-05 13:42:02', 4, 1);
+INSERT INTO playlist VALUES ('2017-10-05 13:42:02', '2017-10-05 13:46:02', 5, 1);
+INSERT INTO playlist VALUES ('2017-10-05 13:45:02', '2017-10-05 13:50:02', 6, 1);
+INSERT INTO playlist VALUES ('2017-10-05 13:50:02', '2017-10-05 13:51:02', 7, 0);
+INSERT INTO playlist VALUES ('2017-10-05 13:52:02', '2017-10-05 13:54:02', 8, 0);
+INSERT INTO playlist VALUES ('2017-10-05 13:54:02', '2017-10-05 13:55:02', 9, 1);
+INSERT INTO playlist VALUES ('2017-10-05 13:55:02', '2017-10-05 13:56:02', 10, 0);
+INSERT INTO playlist VALUES ('2017-10-05 13:56:02', '2017-10-05 13:57:02', 11, 0);
+INSERT INTO playlist VALUES ('2017-10-05 13:57:02', '2017-10-05 13:57:32', 11, 0);
+INSERT INTO playlist VALUES ('2017-10-05 13:57:32', '2017-10-05 13:58:02', 12, 0);
+INSERT INTO playlist VALUES ('2017-10-05 13:58:02', '2017-10-05 13:59:02', 13, 0);
+INSERT INTO playlist VALUES ('2017-10-05 13:59:02', '2017-10-05 14:00:02', 14, 0);
+INSERT INTO playlist VALUES ('2017-10-05 14:00:02', '2017-10-05 14:01:02', 10, 0);
+INSERT INTO playlist VALUES ('2017-10-05 14:01:02', '2017-10-05 14:05:02', 7, 0);
+
+INSERT INTO companies VALUES (NULL, 'AT&T');
+INSERT INTO companies VALUES (NULL, 'Verizon');
+INSERT INTO companies VALUES (NULL, 'Samsung');
+INSERT INTO companies VALUES (NULL, 'Virgin');
+
+INSERT INTO emails VALUES (1, 'a@email.com');
+INSERT INTO emails VALUES (2, 'b@email.com');
+INSERT INTO emails VALUES (3, 'c@email.com');
+INSERT INTO emails VALUES (4, 'd@email.com');
+INSERT INTO emails VALUES (1, 'e@email.com');
+INSERT INTO emails VALUES (1, 'f@email.com');
+
+INSERT INTO ads VALUES (10, 1, '2017-10-02 13:31:02', '2017-10-22 13:31:02', 42);
+INSERT INTO ads VALUES (11, 2, '2017-10-02 13:31:02', '2017-10-22 13:31:02', 5);
+INSERT INTO ads VALUES (12, 1, '2017-10-02 13:31:02', '2017-10-22 13:31:02', 100.23);
+INSERT INTO ads VALUES (13, 3, '2017-10-02 13:31:02', '2017-10-22 13:31:02', 17.86);
+INSERT INTO ads VALUES (14, 4, '2017-10-02 13:31:02', '2017-10-22 13:31:02', 39.01);

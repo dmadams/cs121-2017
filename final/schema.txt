@@ -1,0 +1,39 @@
+You can put your answers for Problem 1.2 in this file.
+------------------------------------------------------
+
+audio_files(_audio_id_, path, file_name, length, af_type)
+  * path is also a candidate key
+
+
+songs(_audio_id_, intro_length, explicit)
+  * audio_id is a foreign key to audio_files.audio_id
+
+
+tags(_audio_id_, _tag_)
+  * audio_id is a foreign key to songs.audio_id
+
+
+artists(_audio_id_, _artist_id_, artist_name)
+  * audio_id is a foreign key to songs.audio_id
+
+
+companies(_company_id_, company_name)
+
+
+emails(_company_id_, _email_)
+  * company_id is a foreign key to companies.company_id
+
+
+ads(_audio_id_, company_id, start_date, end_date, price)
+  * audio_id is a foreign key to audio_files.audio_id
+  * company_id is a foreign key to companies.company_id
+
+
+promotions(_audio_id_, p_type, promotion_url)
+  * audio_id is a foreign key to audio_files.audio_id
+
+
+playlist(_play_time_, end_time, audio_id, l_request)
+  * audio_id is a foreign key to audio_files.audio_id
+  * (end_time, audio_id) is also a candidate key
+

@@ -1,0 +1,15 @@
+-- [Problem 18]
+The second step takes so long because the database is scanning through all of
+the rows in t2 as well to ensure that no rows in t2 have an a value
+corresponding to the a value of the row just deleted from t1 due to the
+foreign key. This behavior will be repeated for every row that is deleted from
+t1 by the SQL statement. 
+
+Since the developer already removed the rows from t2 in the first step, he can
+simply remove the foreign key then execute his SQL statement then redo the
+foreign key.
+
+ALTER TABLE t2 DROP FOREIGN KEY (a);
+DELETE FROM t1 WHERE a IN (list of values to remove);
+ALTER TABLE t2 ADD FOREIGN KEY (a) REFERENCES t1(a);
+

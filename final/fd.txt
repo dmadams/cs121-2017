@@ -1,0 +1,49 @@
+You can put your answers for Problem 3 in this file.  Follow this notation for
+writing your answers in text format:
+
+ * You can write functional dependencies as A -> B
+
+ * You can write a set of functional dependencies as { A -> BC, C -> D }
+
+ * You can write attribute-set closure as {A}+ etc.
+
+ * You can write multivalued dependencies as A ->> B
+
+ * When writing relation schemas, you can indicate primary-key attributes
+   by enclosing them with underscores, e.g. R1(_A_, B, C), R2(_C_, D)
+
+ * Don't forget that primary key attributes should always come first
+   when writing relation schemas
+
+-- [Problem 3a]
+AC is a candidate key for R.
+
+Compute the attribute-set closure to show it is a superkey:
+AC+ = AC
+    = ABCG      since C->B and C->G
+    = ABCGHI    since AB->H and G->I
+
+Since there is no functional dependecy X->A or X->C in F for any X, AC is a
+candidate key and not just a superkey.
+
+
+-- [Problem 3b]
+1. { G->B, AB->H, C->B, CG->I, C->G, G->I }
+    Since G->I, C in CG->I is extraneuous.
+2. { G->B, AB->H, C->B, G->I, C->G }
+    Since C->G, G->B, and G->I, by the transitivity and union rules C->BGI.
+3. { AB->H, C->B, C->BGI }
+    Since we have C->BGI already, C->B is extraneuous.
+4. { AB->H, C->BGI }
+
+Fc = { AB->H, C->BGI }
+
+
+-- [Problem 3c]
+Since we have Fc = { AB->H, C->BGI },
+R1 = (_A_, _B_, H)
+R2 = (_C_, B, G, I)
+
+Since we don't have a candidate key for R,
+R3 = (_A_, _C_)
+

@@ -1,0 +1,46 @@
+You can put your answers for Problem 4 in this file.  Follow this notation for
+writing your answers in text format:
+
+ * You can write functional dependencies as A -> B
+
+ * You can write a set of functional dependencies as { A -> BC, C -> D }
+
+ * You can write attribute-set closure as {A}+ etc.
+
+ * You can write multivalued dependencies as A ->> B
+
+ * When writing relation schemas, you can indicate primary-key attributes
+   by enclosing them with underscores, e.g. R1(_A_, B, C), R2(_C_, D)
+
+ * Don't forget that primary key attributes should always come first
+   when writing relation schemas
+
+-- [Problem 4a]
+tutor_id -> tutor_name, email, graduation_date
+The tutor id should be unique to each tutor and imply the tutor's name, email
+and graduation date.
+
+course_number -> course_name
+The course number should determine the course's name.
+
+tutor_id, topic ->> topic, course_number
+If you have a tutor that can tutor for a topic, then there must also be a course
+with that topic present and the tutor can tutor for that course.
+
+
+-- [Problem 4b]
+No, this is not a good design. It doesn't follow any type of normal form.
+
+
+-- [Problem 4c]
+tutors(_tutor_id_, tutor_name, email, graduation_date)
+courses(_course_number_, course_name)
+tutor_topics(_tutor_id_, _topic_)
+course_topics(_course_number_, _topic_)
+
+This schema should be more efficient when trying to find what tutors can tutor
+what topics or what topics are covered by a course. The ability to
+determine what tutors can tutor a specific topic in a course or to determine 
+what courses a tutor can tutor is also still preserved while still having the
+same number of records.
+

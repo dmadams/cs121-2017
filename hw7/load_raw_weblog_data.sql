@@ -1,0 +1,1 @@
+LOAD DATA LOCAL INFILE '/Users/David/Documents/School/Caltech/2017-18/Fall/CS_121/hw7/raw_web_log.dat' INTO TABLE raw_web_log;

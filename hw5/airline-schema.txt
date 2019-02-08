@@ -1,0 +1,58 @@
+-- [Problem 4]
+
+customers(_customer_id_, email, first_name, last_name)
+  * email is also a candidate key
+
+
+travelers(_customer_id_, passport_number, country, emergency_contact,
+          emergency_phone, frequent_flyer)
+  * customer_id is a foreign key to customers.customer_id
+
+
+purchasers(_customer_id_, cc_number, exp_date, ver_code)
+  * customer_id is a foreign key to customers.customer_id
+
+
+purchases(_purchase_id_, customer_id, purchase_date, conf_number)
+  * customer_id is a foreign key to purchasers.customer_id
+  * conf_number is also a candidate key
+
+
+phone_numbers(_customer_id_, _phone_number_)
+  * customer_id is a foreign key to customers.customer_id
+
+
+airplanes(_iata_code_, company, model)
+
+
+flights(_flight_number_, _flight_date_, iata_code, flight_time, source,
+        destination,  international)
+  * iata_code is a foreign key to airplanes.iata_code
+
+
+seats(_seat_number_, _iata_code_, seat_class, seat_type, exit_row)
+  * iata_code is a foreign key to airplanes.iata_code
+
+
+flight_seats(_flight_number_, _flight_date_, _seat_number_)
+  * flight_number is a foreign key to flights.flight_number
+  * flight_date is a foreign key to flights.flight_date
+  * seat_number is a foreign key to seats.seat_number
+
+
+tickets(_ticket_id_, flight_number, flight_date, seat_number, customer_id,
+        purchase_id, sale_price)
+  * flight_number is a foreign key to flight_seats.flight_number
+  * flight_date is a foreign key to flight_seats.flight_date
+  * seat_number is a foreign key to flight_seats.seat_number
+  * customer_id is a foreign key to travelers.customer_id
+  * purchase_id is a foreign key to purchases.purchase_id
+
+
+I combined the flight number and flight_date of flights and seat number of seats
+together as flight_seats. This schema will keep track of the seat numbers
+available on each individual flight, information that is extremely useful and
+likely to be referenced very often.
+
+Also, I split the phone numbers for customers into a seperate schema to make 
+them simpler to handle.
